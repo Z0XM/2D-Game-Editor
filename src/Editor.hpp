@@ -31,12 +31,12 @@ public:
 	std::array<std::array<sf::Texture, 12>, 1> m_texture_tiles;
 
 	zui::Frame m_frame;
-	zui::Page m_page_left, m_page_top;
-	zui::TextButton m_textbutton_merge, m_textbutton_delete, m_textbutton_clear;
-	zui::Button m_button_eraser, m_button_pencil, m_button_select, m_button_updatelvlWH;
-	zui::Inputbox m_input_lvlW, m_input_lvlH;
-	zui::Dropdown m_drop_tiles, m_drop_objects;
-	zui::Page m_page_lvl;
+	zui::Page_ptr m_page_left, m_page_top;
+	zui::TextButton_ptr m_textbutton_merge, m_textbutton_delete, m_textbutton_clear;
+	zui::Button_ptr m_button_eraser, m_button_pencil, m_button_select, m_button_updatelvlWH;
+	zui::Inputbox_ptr m_input_lvlW, m_input_lvlH;
+	zui::Dropdown_ptr m_drop_tiles, m_drop_objects;
+	zui::Page_ptr m_page_lvl;
 
 	std::vector<std::shared_ptr<Platform>> m_button_platforms;
 	std::queue<std::shared_ptr<Platform>> m_button_inactive_platforms;
@@ -46,7 +46,7 @@ public:
 
 	sf::Vector2f m_plat_quad[4];
 
-	std::array<zui::Button, 1> m_button_tileChoices;
+	std::array<zui::Button_ptr, 1> m_button_tileChoices;
 	
 	enum PenMode { SELECT, DRAW, ERASE } m_penMode;
 	int m_penSize;
@@ -55,8 +55,8 @@ public:
 	TileType m_tileType;
 
 	
-	zui::TextButton m_textbutton_saveLvl, m_textbutton_loadLvl;
-	zui::Inputbox m_input_fileName;
+	zui::TextButton_ptr m_textbutton_saveLvl, m_textbutton_loadLvl;
+	zui::Inputbox_ptr m_input_fileName;
 
 	void addButtonPlatform();
 	
